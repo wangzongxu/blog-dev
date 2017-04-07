@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Chrome配置跨域 | Soil Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="作为前端码农在项目开发中时常需要和后台进行接口联调，如果是前后端分离的情况下，本地开发调试后台接口的话，涉及到跨域问题比较令人头疼，很多人不知道其实chrome可以配置这一点：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Chrome配置跨域">
+<meta property="og:url" content="https://wangzongxu.github.io/2017/03/25/chromeConf/index.html">
+<meta property="og:site_name" content="Soil Blog">
+<meta property="og:description" content="作为前端码农在项目开发中时常需要和后台进行接口联调，如果是前后端分离的情况下，本地开发调试后台接口的话，涉及到跨域问题比较令人头疼，很多人不知道其实chrome可以配置这一点：">
+<meta property="og:updated_time" content="2017-03-25T09:44:38.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chrome配置跨域">
+<meta name="twitter:description" content="作为前端码农在项目开发中时常需要和后台进行接口联调，如果是前后端分离的情况下，本地开发调试后台接口的话，涉及到跨域问题比较令人头疼，很多人不知道其实chrome可以配置这一点：">
+  
+    <link rel="alternate" href="https://github.com/wangzongxu" title="Soil Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Soil Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">More soil will become a mountain</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">主页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="https://github.com/wangzongxu" title="github"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.baidu.com/s" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="wd" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://wangzongxu.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-chromeConf" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/03/25/chromeConf/" class="article-date">
+  <time datetime="2017-03-25T07:41:23.000Z" itemprop="datePublished">2017-03-25</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/chrome/">chrome</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Chrome配置跨域
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>作为前端码农在项目开发中时常需要和后台进行接口联调，如果是前后端分离的情况下，本地开发调试后台接口的话，涉及到跨域问题比较令人头疼，很多人不知道其实chrome可以配置这一点：<br><a id="more"></a></p>
+<h3 id="Chrome配置跨域"><a href="#Chrome配置跨域" class="headerlink" title="Chrome配置跨域"></a>Chrome配置跨域</h3><ul>
+<li><p>windows环境下：</p>
+<ol>
+<li>在任意位置新建一个Chrome快捷方式，</li>
+<li>右键点击快捷方式并打开属性，</li>
+<li>在属性弹窗的选项中找到目标选项，</li>
+<li>在目标选项中添加禁用安全限制配置(注意空格开头)<br>–disable-web-security –user-data-dir=C:\MyChromeDevUserData</li>
+<li>点击确定，然后打开这个快捷方式，发现搜索框下边有一黄条提示就成功了，接下来就可以试一下请求跨域的资源了。</li>
+</ol>
+</li>
+<li><p>mac环境下：</p>
+<ol>
+<li>先将Chrome完全退出，</li>
+<li>打开命令行，</li>
+<li>输入open -a’Google Chrome’ –args –disable-web-security –user-data-dir=/Users/这里输入你的mac用户名/MyChromeDevUserData/</li>
+<li>配置完成，尝试请求跨域资源。</li>
+</ol>
+</li>
+</ul>
+<h3 id="顺便整理一些chrome配置参数"><a href="#顺便整理一些chrome配置参数" class="headerlink" title="顺便整理一些chrome配置参数"></a>顺便整理一些chrome配置参数</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–purge-memory-button</td>
+<td>在Chrome的任务管理器中增加内存清理功能</td>
+</tr>
+<tr>
+<td>–allow-outdated-plugins</td>
+<td>不停用过期的插件。</td>
+</tr>
+<tr>
+<td>–allow-running-insecure-content</td>
+<td>默认情况下，https 页面不允许从 http 链接引用 javascript/css/plug-ins。添加这一参数会放行这些内容。</td>
+</tr>
+<tr>
+<td>–allow-scripting-gallery</td>
+<td>允许拓展脚本在官方应用中心生效。默认情况下，出于安全因素考虑这些脚本都会被阻止。</td>
+</tr>
+<tr>
+<td>–disable-popup-blocking</td>
+<td>禁用弹出拦截</td>
+</tr>
+<tr>
+<td>–disable-javascript</td>
+<td>禁用JavaScript</td>
+</tr>
+<tr>
+<td>–disable-java</td>
+<td>禁用Java</td>
+</tr>
+<tr>
+<td>–disable-plugins</td>
+<td>禁用插件</td>
+</tr>
+<tr>
+<td>–-disable-images</td>
+<td>禁用图像</td>
+</tr>
+<tr>
+<td>–disable-accelerated-video</td>
+<td>停用 GPU 加速视频。</td>
+</tr>
+<tr>
+<td>–disable-dart</td>
+<td>停用 Dart。</td>
+</tr>
+<tr>
+<td>–disable-desktop-notifications</td>
+<td>禁用桌面通知，在 Windows 中桌面通知默认是启用的。</td>
+</tr>
+<tr>
+<td>–disable-extensions</td>
+<td>禁用拓展。</td>
+</tr>
+<tr>
+<td>–disable-file-system</td>
+<td>停用 FileSystem API。</td>
+</tr>
+<tr>
+<td>–disable-preconnect</td>
+<td>停用 TCP/IP 预连接。</td>
+</tr>
+<tr>
+<td>–disable-remote-fonts</td>
+<td>关闭远程字体支持。SVG 中字体不受此参数影响。</td>
+</tr>
+<tr>
+<td>–disable-speech-input</td>
+<td>停用语音输入。</td>
+</tr>
+<tr>
+<td>–disable-web-security</td>
+<td>不遵守同源策略。</td>
+</tr>
+<tr>
+<td>–user-data-dir=（chrome资料路径</td>
+<td>代表自定义指定Chrome的资料路径</td>
+</tr>
+<tr>
+<td>–disk-cache-dir</td>
+<td>将缓存设置在给定的路径。</td>
+</tr>
+<tr>
+<td>–disk-cache-size</td>
+<td>设置缓存大小上限，以字节为单位。</td>
+</tr>
+<tr>
+<td>–dns-prefetch-disable</td>
+<td>停用DNS预读。</td>
+</tr>
+<tr>
+<td>–enable-print-preview</td>
+<td>启用打印预览。</td>
+</tr>
+<tr>
+<td>–extensions-update-frequency</td>
+<td>设定拓展自动更新频率，以秒为单位。</td>
+</tr>
+<tr>
+<td>–incognito</td>
+<td>让浏览器直接以隐身模式启动。</td>
+</tr>
+<tr>
+<td>–keep-alive-for-test</td>
+<td>最后一个标签关闭后仍保持浏览器进程。（某种意义上可以提高热启动速度，不过你最好得有充足的内存）</td>
+</tr>
+<tr>
+<td>–kiosk</td>
+<td>启用kiosk模式。（一种类似于全屏的浏览模式）</td>
+</tr>
+<tr>
+<td>–lang</td>
+<td>使用指定的语言。</td>
+</tr>
+<tr>
+<td>–no-displaying-insecure-content</td>
+<td>默认情况下，https 页面允许从 http 链接引用图片/字体/框架。添加这一参数会阻止这些内容。</td>
+</tr>
+<tr>
+<td>–no-first-run</td>
+<td>跳过 Chromium 首次运行检查。</td>
+</tr>
+<tr>
+<td>–no-referrers</td>
+<td>不发送 Http-Referer 头。</td>
+</tr>
+<tr>
+<td>–no-sandbox</td>
+<td>彻底停用沙箱。</td>
+</tr>
+<tr>
+<td>–no-startup-window</td>
+<td>启动时不建立窗口。</td>
+</tr>
+<tr>
+<td>–proxy-pac-url</td>
+<td>使用给定 URL 的 pac 代理脚本。（也可以使用本地文件，如 –proxy-pac-url=”file:\\c:\proxy.pac”）</td>
+</tr>
+<tr>
+<td>–proxy-server</td>
+<td>使用给定的代理服务器，这个参数只对 http 和 https 有效。（例如 –proxy-server=127.0.0.1:8087 ）</td>
+</tr>
+<tr>
+<td>–single-process</td>
+<td>以单进程模式运行 Chromium。（启动时浏览器会给出不安全警告）</td>
+</tr>
+<tr>
+<td>–start-maximized</td>
+<td>启动时最大化。</td>
+</tr>
+<tr>
+<td>–user-agent</td>
+<td>使用给定的 User-Agent 字符串</td>
+</tr>
+<tr>
+<td>–process-per-tab</td>
+<td>每个分页使用单独进程</td>
+</tr>
+<tr>
+<td>–process-per-site</td>
+<td>每个站点使用单独进程</td>
+</tr>
+<tr>
+<td>–in-process-plugins</td>
+<td>插件不启用单独进程</td>
+</tr>
+<tr>
+<td>–omnibox-popup-count=”num”</td>
+<td>将网址列弹出的提示选单数量改为num个</td>
+</tr>
+<tr>
+<td>–enable-vertical-tabs</td>
+<td>调整chrome游览器标签存放在左边，非顶部</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-title="Chrome配置跨域" data-url="https://wangzongxu.github.io/2017/03/25/chromeConf/" data-id="cj0v2l4680000vi14vcmszqyn" class="article-share-link -mob-share-open">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chrome/">chrome</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/03/25/chromeUtils/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          常用Chrome扩展工具
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/20/hexo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">hexo</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/chrome/">chrome</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端优化/">前端优化</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/剪切板/">剪切板</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客/">博客</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/chrome/" style="font-size: 20px;">chrome</a> <a href="/tags/前端优化/" style="font-size: 20px;">前端优化</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/03/29/esLint/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/27/stringify/">你不知道的JSON.stringify</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/26/yahoo34/">雅虎优化技巧（摘）</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/26/front-end-optimzation/">前端优化技巧</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/26/strict/">javascript严格模式</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 wangzongxu<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">主页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+<!--MOB SHARE BEGIN-->
+<div class="-mob-share-ui -mob-share-ui-theme -mob-share-ui-theme-slide-right" style="display: none">
+    <ul class="-mob-share-list">
+        <li class="-mob-share-weibo"><p>新浪微博</p></li>
+        <li class="-mob-share-weixin"><p>微信</p></li>
+        <li class="-mob-share-qzone"><p>QQ空间</p></li>
+        <li class="-mob-share-qq"><p>QQ好友</p></li>
+    </ul>
+    <div class="-mob-share-close">取消</div>
+</div>
+<div class="-mob-share-ui-bg"></div>
+<!-- <script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey=1c6dba747f8a"></script> -->
+<script id="-mob-share" src="https://wangzongxu.github.io/img-cache/blog/mob-share.js"></script>
+<link rel="stylesheet" href="https://wangzongxu.github.io/img-cache/blog/mob-share.css">
+<!--MOB SHARE END-->
+</body>
+</html>
