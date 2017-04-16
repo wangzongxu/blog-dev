@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>正则表达式 | Water Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在常见的字符串检索或替换中，我们需要提供一种模式表示检索工替换的规则 正则表达式使用单个字符串来描述、匹配一系列符合某个句法规则的字符串 判断正则是否能匹配给定参数字符串">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则表达式">
+<meta property="og:url" content="https://wangzongxu.github.io/2017/04/08/regexp/index.html">
+<meta property="og:site_name" content="Water Blog">
+<meta property="og:description" content="在常见的字符串检索或替换中，我们需要提供一种模式表示检索工替换的规则 正则表达式使用单个字符串来描述、匹配一系列符合某个句法规则的字符串 判断正则是否能匹配给定参数字符串">
+<meta property="og:updated_time" content="2017-04-08T13:25:30.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="正则表达式">
+<meta name="twitter:description" content="在常见的字符串检索或替换中，我们需要提供一种模式表示检索工替换的规则 正则表达式使用单个字符串来描述、匹配一系列符合某个句法规则的字符串 判断正则是否能匹配给定参数字符串">
+  
+    <link rel="alternate" href="https://github.com/wangzongxu" title="Water Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" type="image/x-icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Water Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">The top class of virtue is like water,which benefits all things without any demands for return.</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">主页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="https://github.com/wangzongxu" title="github"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.baidu.com/s" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="wd" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://wangzongxu.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-regexp" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/08/regexp/" class="article-date">
+  <time datetime="2017-04-08T13:21:55.000Z" itemprop="datePublished">2017-04-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/JS/">JS</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      正则表达式
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在常见的字符串检索或替换中，我们需要提供一种模式表示检索工替换的规则 正则表达式使用单个字符串来描述、匹配一系列符合某个句法规则的字符串 判断正则是否能匹配给定参数字符串<br><a id="more"></a></p>
+<h3 id="1-什么是正则表达式"><a href="#1-什么是正则表达式" class="headerlink" title="1. 什么是正则表达式"></a>1. 什么是正则表达式</h3><p>　　在常见的字符串检索或替换中，我们需要提供一种模式表示检索工替换的规则 正则表达式使用单个字符串来描述、匹配一系列符合某个句法规则的字符串 判断正则是否能匹配给定参数字符串</p>
+<h3 id="2-JS正则中的特殊字符"><a href="#2-JS正则中的特殊字符" class="headerlink" title="2. JS正则中的特殊字符"></a>2. JS正则中的特殊字符</h3><ul>
+<li><p>需要转义的特殊字符</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">( [ &#123; \ ^ $ | ) ? * + .</div></pre></td></tr></table></figure>
+</li>
+<li><p>特殊字符说明</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>特殊字符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$</td>
+<td>匹配输入字符串的结尾位置。请使用 \$</td>
+</tr>
+<tr>
+<td>( )</td>
+<td>标记一个子表达式的开始和结束位置,请使用\( \)</td>
+</tr>
+<tr>
+<td>*</td>
+<td>匹配前面的子表达式零次或多次,请使用 \*</td>
+</tr>
+<tr>
+<td>+</td>
+<td>匹配前面的子表达式一次或多次,请使用 \+</td>
+</tr>
+<tr>
+<td>.</td>
+<td>匹配除换行符\n之外的任何单字符,请使用 \.</td>
+</tr>
+<tr>
+<td>[]</td>
+<td>标记一个中括号表达式的开始,请使用 \[ 或 \]</td>
+</tr>
+<tr>
+<td>?</td>
+<td>匹配前面的子表达式零次或一次,请使用 \?</td>
+</tr>
+<tr>
+<td>\</td>
+<td>将下一个字符标记为或特殊字符,请使用 \\</td>
+</tr>
+<tr>
+<td>^</td>
+<td>匹配输入字符串的开始位置,请使用 \^</td>
+</tr>
+<tr>
+<td>{}</td>
+<td>标记限定符表达式的开始。请使用 \{</td>
+</tr>
+<tr>
+<td>¦</td>
+<td>指明两项之间的一个选择,请使用 \¦</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-预定义的特殊字符"><a href="#3-预定义的特殊字符" class="headerlink" title="3. 预定义的特殊字符"></a>3. 预定义的特殊字符</h3><table>
+<thead>
+<tr>
+<th>字符</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>\t</td>
+<td>制表符</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>制表符</td>
+</tr>
+<tr>
+<td>\r</td>
+<td>回车符</td>
+</tr>
+<tr>
+<td>\f</td>
+<td>换页符</td>
+</tr>
+<tr>
+<td>\v</td>
+<td>垂直制表符</td>
+</tr>
+<tr>
+<td>\0</td>
+<td>空字符</td>
+</tr>
+<tr>
+<td>\x0B</td>
+<td>垂直tab</td>
+</tr>
+</tbody>
+</table>
+<h3 id="4-范围符号"><a href="#4-范围符号" class="headerlink" title="4. 范围符号"></a>4. 范围符号</h3><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>含义</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[]</td>
+<td>字符范围</td>
+<td>[a-z] [0-9] [a-z0-9]</td>
+</tr>
+<tr>
+<td>[^]</td>
+<td>字符范围以外</td>
+<td>[^a-z]</td>
+</tr>
+<tr>
+<td>^</td>
+<td>行首</td>
+<td>^zfpx</td>
+</tr>
+<tr>
+<td>$</td>
+<td>行尾</td>
+<td>zfpx$</td>
+</tr>
+<tr>
+<td>\b</td>
+<td>零宽单词边界</td>
+<td>\bhello</td>
+</tr>
+<tr>
+<td>\B</td>
+<td>非\b</td>
+<td>\Bhello</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-预定义类"><a href="#5-预定义类" class="headerlink" title="5. 预定义类"></a>5. 预定义类</h3><table>
+<thead>
+<tr>
+<th>字符</th>
+<th>等同于</th>
+<th>含义</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.</td>
+<td>[^\n\r]</td>
+<td>任意字符</td>
+<td>/…/.test(‘abc’)</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>[0-9]</td>
+<td>数字0-9</td>
+<td>/\d\d\d/.test(‘123’)</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>[^0-9]</td>
+<td>非\d,即不是数字0-9</td>
+<td>/\D\D\D/.test(‘abc’)</td>
+</tr>
+<tr>
+<td>\w</td>
+<td>[a-zA-Z_0-9]</td>
+<td>数字0-9、字母a-z及a-z、下划线</td>
+<td>/\w\w/.test(‘a_’)</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>[^a-zA-Z_0-9]</td>
+<td>非\W</td>
+<td>/\W\W/.test(‘@#’)</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>[\t\n\x0B\f\r]</td>
+<td>空格、TAB、换页符、换行符</td>
+<td>/\sabc/.test(‘ abc’)</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>[^\t\n\x0B\f\r]</td>
+<td>非\s</td>
+<td>/\Sd/.test(‘a d’)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="6-分组"><a href="#6-分组" class="headerlink" title="6. 分组"></a>6. 分组</h3><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>含义</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(x)</td>
+<td>分组，并记录匹配到的字符串</td>
+<td>/(abc)/</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>表示使用分组符(x)匹配到的字符串</td>
+<td>/(abc)\1/.test(‘abcabc’)</td>
+</tr>
+<tr>
+<td>(?:x)</td>
+<td>仅分组不捕获</td>
+<td>/(?:abc)(def)\1/.test(‘abcdefdef’);</td>
+</tr>
+</tbody>
+</table>
+<h3 id="7-重复"><a href="#7-重复" class="headerlink" title="7. 重复"></a>7. 重复</h3><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>含义</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a*,a+</td>
+<td>重复次数&gt;=0,重复次数&gt;=1 贪婪算法</td>
+<td>/abc*.test(‘abccc’)/</td>
+</tr>
+<tr>
+<td>a*? a+?</td>
+<td>同a*,a+ 非贪婪算法</td>
+<td>/abc*/.test(‘ab’)</td>
+</tr>
+<tr>
+<td>a?</td>
+<td>出现0次或1次</td>
+<td>/a?bc/.test(‘ab’)</td>
+</tr>
+<tr>
+<td>a¦b</td>
+<td>a或者b</td>
+<td>/a¦b/.test(‘a’)</td>
+</tr>
+<tr>
+<td>a{n},a{n,},a{n,m}</td>
+<td>重复n次，重复&gt;=n次,重复n&lt;=x&lt;=m</td>
+<td>/a{2}/.test(‘aa’)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="8-前瞻-预查"><a href="#8-前瞻-预查" class="headerlink" title="8. 前瞻(预查)"></a>8. 前瞻(预查)</h3><table>
+<thead>
+<tr>
+<th>正则</th>
+<th>名称</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(?=exp)</td>
+<td>正向前瞻</td>
+<td>匹配后面是exp的位置</td>
+</tr>
+<tr>
+<td>(?!exp)</td>
+<td>负向前瞻</td>
+<td>匹配后面不是exp的位置</td>
+</tr>
+<tr>
+<td>(?:exp)</td>
+<td>整体匹配</td>
+<td>只匹配不想被捕获的时候使用,不能使用 反向引用</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = <span class="string">'abbcdefbg'</span>.match(<span class="regexp">/b+?(?=g)/g</span>); <span class="comment">// ['b'] 前面符合正则</span></div><div class="line"><span class="keyword">var</span> result = <span class="string">'abbcdefbg'</span>.match(<span class="regexp">/b+(?!g)/g</span>); <span class="comment">// ['bb'] 前面不符合正则</span></div></pre></td></tr></table></figure>
+<h3 id="9-标志位"><a href="#9-标志位" class="headerlink" title="9. 标志位"></a>9. 标志位</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//两种使用方法：</span></div><div class="line">/abc/img.test(<span class="string">'ABC'</span>); <span class="comment">//true</span></div><div class="line"><span class="built_in">RegExp</span>(<span class="string">'abc'</span>,<span class="string">'img'</span>);</div><div class="line"></div><div class="line"><span class="regexp">/abc/g</span>.global <span class="comment">//true</span></div><div class="line">/abc/i.ignoreCase <span class="comment">//true</span></div><div class="line">/abc/m.multiline <span class="comment">//true</span></div><div class="line">/abc/g.source <span class="comment">//true 返回正则的内容</span></div></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>符号</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>global</td>
+<td>匹配所有的情况</td>
+</tr>
+<tr>
+<td>ignoreCase</td>
+<td>忽略大小写</td>
+</tr>
+<tr>
+<td>multiline</td>
+<td>跨行匹配</td>
+</tr>
+</tbody>
+</table>
+<h3 id="10-RegExp对象上的方法"><a href="#10-RegExp对象上的方法" class="headerlink" title="10. RegExp对象上的方法"></a>10. RegExp对象上的方法</h3><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>含义</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>compile</td>
+<td>可以改变正则的内容</td>
+<td>var reg = /abc/;reg.compile(‘def’);reg.test(‘def’);//true</td>
+</tr>
+<tr>
+<td>exec</td>
+<td>用正则匹配字符串获取匹配结果</td>
+<td>/abc/.exec(‘abcdef’); // “abc”</td>
+</tr>
+<tr>
+<td>test</td>
+<td>如果匹配返回true</td>
+<td>/ab/.test(‘ab’)</td>
+</tr>
+<tr>
+<td>toString</td>
+<td>返回正则内容</td>
+<td>/ab/.toString()</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//exec例子:</span></div><div class="line"><span class="keyword">var</span> str = <span class="string">"school school"</span>;</div><div class="line"><span class="keyword">var</span> patt = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"school"</span>,<span class="string">'g'</span>);</div><div class="line"><span class="keyword">var</span> result;</div><div class="line"><span class="keyword">while</span> ((result = patt.exec(str)) != <span class="literal">null</span>)  &#123;</div><div class="line">    <span class="built_in">console</span>.log(result);</div><div class="line">    <span class="built_in">console</span>.log(patt.lastIndex);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="11-字符串的正则方法"><a href="#11-字符串的正则方法" class="headerlink" title="11. 字符串的正则方法"></a>11. 字符串的正则方法</h3><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>含义</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>search</td>
+<td>查找正则匹配对应的索引</td>
+<td>‘abcdefabc’.search(/(abc)\1/)</td>
+</tr>
+<tr>
+<td>replace</td>
+<td>替换</td>
+<td>‘aabbbcc’.replace(/b+?/); //aa1bbcc</td>
+</tr>
+<tr>
+<td>match</td>
+<td>匹配</td>
+<td>‘aabbbccbbb’.match(/b+/g) //[“bbb”, “bbb”]</td>
+</tr>
+<tr>
+<td>split</td>
+<td>分割字符串</td>
+<td>‘aabbbcc’.split(/b+/); // [“aa”,”cc”]</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//match例子:</span></div><div class="line"><span class="keyword">var</span> path = <span class="string">'/users/:id/:name'</span>;</div><div class="line"><span class="built_in">console</span>.log(path.match(<span class="regexp">/:(\w+)/</span>));</div><div class="line"><span class="built_in">console</span>.log(path.match(<span class="regexp">/:(\w+)/g</span>));<span class="comment">//如果加g的话不会捕获小分组内容</span></div><div class="line"><span class="comment">//replace例子:</span></div><div class="line"><span class="built_in">console</span>.log(<span class="string">'/users/:id/:name'</span>.replace(<span class="regexp">/:\w+/g</span>,<span class="string">'(\\w+)'</span>));</div></pre></td></tr></table></figure>
+<h3 id="12-参考"><a href="#12-参考" class="headerlink" title="12. 参考"></a>12. 参考</h3><ul>
+<li><a href="http://www.cnblogs.com/rubylouvre/archive/2010/03/09/1681222.html" target="_blank" rel="external">javascript正则表达式</a></li>
+<li><a href="https://jex.im/regulex" target="_blank" rel="external">Regulex</a></li>
+<li><a href="https://regexper.com/" target="_blank" rel="external">正则表达式可视化工具</a></li>
+<li><a href="http://www.w3school.com.cn/jsref/jsref_obj_regexp.asp" target="_blank" rel="external">w3school</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-title="正则表达式" data-url="https://wangzongxu.github.io/2017/04/08/regexp/" data-id="cj1kty3s5000lyj14yd7b6w0x" class="article-share-link -mob-share-open">分享</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则/">正则</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/04/08/TaoTeChing/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          道德经
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/30/cache_control/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">关于浏览器缓存</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/JS/">JS</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/chrome/">chrome</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/代码风格/">代码风格</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端优化/">前端优化</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/剪切板/">剪切板</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/博客/">博客</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/国学/">国学</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JS/" style="font-size: 20px;">JS</a> <a href="/tags/chrome/" style="font-size: 15px;">chrome</a> <a href="/tags/代码风格/" style="font-size: 10px;">代码风格</a> <a href="/tags/前端优化/" style="font-size: 15px;">前端优化</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/正则/" style="font-size: 10px;">正则</a> <a href="/tags/浏览器缓存/" style="font-size: 10px;">浏览器缓存</a> <a href="/tags/电子书/" style="font-size: 15px;">电子书</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">三月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/04/16/console/">console.log打印漂亮的日志</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/08/ZhongYong/">中庸</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/08/TaoTeChing/">道德经</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/08/regexp/">正则表达式</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/30/cache_control/">关于浏览器缓存</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 wangzongxu<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">主页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+</nav>
+    
+
+<script src="//cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+<!--MOB SHARE BEGIN-->
+<div class="-mob-share-ui -mob-share-ui-theme -mob-share-ui-theme-slide-right" style="display: none">
+    <ul class="-mob-share-list">
+        <li class="-mob-share-weibo"><p>新浪微博</p></li>
+        <li class="-mob-share-weixin"><p>微信</p></li>
+        <li class="-mob-share-qzone"><p>QQ空间</p></li>
+        <li class="-mob-share-qq"><p>QQ好友</p></li>
+    </ul>
+    <div class="-mob-share-close">取消</div>
+</div>
+<div class="-mob-share-ui-bg"></div>
+<!-- <script id="-mob-share" src="http://f1.webshare.mob.com/code/mob-share.js?appkey=1c6dba747f8a"></script> -->
+<script id="-mob-share" src="https://wangzongxu.github.io/img-cache/blog/mob-share.js"></script>
+<link rel="stylesheet" href="https://wangzongxu.github.io/img-cache/blog/mob-share.css">
+<!--MOB SHARE END-->
+</body>
+</html>
