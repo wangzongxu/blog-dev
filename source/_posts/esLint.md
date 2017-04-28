@@ -9,7 +9,6 @@ tags:
 ESLint是用于识别和报告ECMAScript / JavaScript代码书写风格的工具，目的是使代码更加一致并避免错误。 在许多方面，它与JSLint和JSHint类似，但有一些例外：
 <!-- more -->
 这里只介绍基本使用各规则，详细可去[官方文档](http://eslint.org/)
-![esLint](http://eslint.org/img/logo.svg)
 
 - ESLint使用[Espree](https://github.com/eslint/espree)进行JavaScript解析。
 - ESLint使用AST来评估代码中的模式。
@@ -62,9 +61,10 @@ eslint yourFile.js
 > eslint --init只在根据每个项目设置和配置ESLint，并将ESLint及其插件的本地安装运行在运行的目录中。 如果您希望使用ESLint的全局安装，则配置中使用的任何插件也必须全局安装。
 
 #### 配置
-> If you are coming from a version before 1.0.0 please see the [migration guide](http://eslint.org/docs/user-guide/migrating-to-1.0.0).
+> 如果你是1.0.0之前的版本，请参阅 [migration guide](http://eslint.org/docs/user-guide/migrating-to-1.0.0).
 
-After running eslint --init, you’ll have a .eslintrc file in your directory. In it, you’ll see some rules configured like this:
+运行eslint --init后，您的目录中将有一个.eslintrc文件。 在其中，您将看到一些如下配置的规则:
+
 ```json
 {
     "rules": {
