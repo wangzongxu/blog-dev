@@ -9,7 +9,7 @@ tags:
 ESLint是用于识别和报告ECMAScript / JavaScript代码书写风格的工具，目的是使代码更加一致并避免错误。 在许多方面，它与JSLint和JSHint类似，但有一些例外：
 <!-- more -->
 这里只介绍基本使用各规则，详细可去[官方文档](http://eslint.org/)
-
+<img src="http://eslint.org/img/logo.svg" width="200" alt="" align="center"/>
 - ESLint使用[Espree](https://github.com/eslint/espree)进行JavaScript解析。
 - ESLint使用AST来评估代码中的模式。
 - ESLint配置灵活，每个规则都是一个插件，您可以在运行时添加更多。

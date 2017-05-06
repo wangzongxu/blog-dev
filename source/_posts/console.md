@@ -28,35 +28,34 @@ console.log('A','B','C')
 ```js
 console.log('%cABC','color:red')
 ```
-![ABC](https://wangzongxu.github.io/img-cache/console/console1.png)
+<img src="https://wangzongxu.github.io/img-cache/console/console1.png" width="300" alt="" align="center"/>
 在控制台查看效果，我们发现ABC变成了红色：%c对应第二个参数，这个参数是css字符串，可以包含多个属性，以分号隔开：
 ```js
 console.log('%cABC','color:red;font-size:30px')
 ```
-![ABC](https://wangzongxu.github.io/img-cache/console/console2.png)
+<img src="https://wangzongxu.github.io/img-cache/console/console2.png" width="400" alt="" align="center"/>
 此时我们发现字体变大了。
 
 如果你想让‘ABC’有更多的风格，我们只需再加上几个'%c'和对应的参数即可：
 ```js
 console.log('%cA%cB%cC','color:red','color:blue','color:green')
 ```
-![ABC](https://wangzongxu.github.io/img-cache/console/console3.png)
+<img src="https://wangzongxu.github.io/img-cache/console/console3.png" width="600" alt="" align="center"/>
 每一个%c，只对从他后边的字符开始至下一个%c之前的位置起作用，第一个%c到第三个%c的样式，分别对应从第二个参数开始的'color:red','color:blue','color:green'，如果你想要更多的颜色，可以添加更多占位符。
 
 #### 制作图案
 这里以我平时使用图案的为例来看一下简单的制作过程：
-![le](https://wangzongxu.github.io/img-cache/webchalk/webchalk.png)
+<img src="https://wangzongxu.github.io/img-cache/webchalk/webchalk.png" width="500" alt="" align="center"/>
 1. 首先第一步比较重要，也是不容易的，因为需要排版，把组成图案的每一个字符对应准确
-![le](https://wangzongxu.github.io/img-cache/console/console4.png)
+<img src="https://wangzongxu.github.io/img-cache/console/console4.png" width="500" alt="" align="center"/>
 这里我先声明一个准备输出的字符串图案，使用的单个字符是一个方块，大家也可以去网上找更多好看的字符尝试，记得在换行的位置加'\n'和该行结束位置的'\'，这个我就不多说了，拼接过字符串的童鞋都知道，当然，如果你使用ES6的模板字符串就不必考虑这么多了。
 
 2. 添加占位符
-![le](https://wangzongxu.github.io/img-cache/console/console5.png)
+<img src="https://wangzongxu.github.io/img-cache/console/console5.png" width="500" alt="" align="center"/>
 我们在每个需要更换颜色的开始位置增加了占位符，虽然看起来字符已经错位，但是并不影响正常输出。
 
 3. 注意占位符的数量和顺序，编写console的样式参数并输出：
-![le](https://wangzongxu.github.io/img-cache/console/console6.png)
-
+<img src="https://wangzongxu.github.io/img-cache/console/console6.png" width="300" alt="" align="center"/>
 #### 总结
 其实非常简单，不过比较头疼的地方就是要选择插入占位符的位置和对准占位符和参数的位置，
 不过推荐大家一款个人插件:web-chalk

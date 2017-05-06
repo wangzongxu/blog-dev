@@ -1,7 +1,7 @@
 ---
 title: http 状态码
 categories:
-- 网络
+- 剪切板
 tags:
 - 网络
 ---
