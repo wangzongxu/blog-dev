@@ -10,4 +10,6 @@ tags:
 
 <!-- more -->
 
-[点击前往](https://wangzongxu.github.io/canvas-demo/hitBricks/dist/)
+> 扫码查看：
+
+<img width="200" alt="" align="center" src="https://wangzongxu.github.io/img-cache/blog/hitBricksCode.png" alt="扫码查看">
