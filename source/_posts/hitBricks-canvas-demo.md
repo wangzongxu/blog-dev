@@ -10,4 +10,4 @@ tags:
 
 <!-- more -->
 
-[点击前往](https://wangzongxu.github.io/canvas-demo/hitBricks/)
+[点击前往](https://wangzongxu.github.io/canvas-demo/hitBricks/dist/)
