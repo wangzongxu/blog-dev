@@ -40,7 +40,7 @@ tags:
 1. 利用script标签实现跨域请求,<script src="http://www.abc.com?callback=functionName"></script>
 2. server定义好的那个用来设置返回数据中执行函数的函数名的那个参数就叫callback;(参见示例中的jsonp参数)
 3. callback后面跟的value(参见示例中的randomName方法的执行)必须是全局作用域下的一个函数
-4. server返回的数据格式是固定的: functionName(/* json data \*/);
+4. server返回的数据格式是固定的: functionName( /\*json data\*/ );
 
 ### 为什么叫jsonp?
 1. 根据返回的数据格式来看：函数名 + json数据
@@ -60,7 +60,7 @@ tags:
 1. 因为jsonp是通过script的src属性去加载跨域资资源,所以jsonp请求全部都是get方法请求.
 2. get系方法有的特点jsonp全有
 3. 所有的jsonp接口必须含有一个callback,否则不是合法的jsonp接口.
-4. 所有的jsonp接口必须按照格式返回 => functionName(/* json data \*/);
+4. 所有的jsonp接口必须按照格式返回 => functionName( /\*json data\*/ );
 
 ### jsonp为什么不是ajax?
 1. 因为ajax是通过浏览器提供的操作http请求的API来实现的.
