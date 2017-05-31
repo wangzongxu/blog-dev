@@ -8,14 +8,15 @@ rss: https://github.com/wangzongxu
 excerpt_link: 查看全部
 fancybox: true
 # Sidebar
-sidebar: left
+sidebar: right
 widgets:
+- recent_posts
+- tagcloud
 - category
 #- tag
 - page
-- tagcloud
 # - archive
-- recent_posts
+
 
 # display widgets at the bottom of index pages (pagination == 2)
 index_widgets:

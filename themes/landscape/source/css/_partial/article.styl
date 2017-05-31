@@ -4,6 +4,10 @@
 .article-inner
   @extend $block
   overflow: hidden
+  transition: all linear 0.1s 0s
+  &:hover
+    transform: translateY(-5px)
+    box-shadow: 10px 10px 17px #ddd
 
 .article-meta
   clearfix()
