@@ -168,3 +168,6 @@ http://ecomfe.github.io/edp/doc/initialization/install/
   2. 当f5刷新网页时，跳过强缓存，但是会检查协商缓存；
 
 - 参考出处：http://www.cnblogs.com/lyzg/p/5125934.html
+
+### 流程图
+![流程图](https://wangzongxu.github.io/img-cache/blog/browser-cache.jpeg)
