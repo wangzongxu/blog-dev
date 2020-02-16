@@ -1,0 +1,23 @@
+{
+  "name": "myzone",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "vuepress dev",
+    "build": "vuepress build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangzongxu/blog-dev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wangzongxu/blog-dev/issues"
+  },
+  "homepage": "https://github.com/wangzongxu/blog-dev#readme",
+  "devDependencies": {
+    "vuepress": "^1.2.0"
+  }
+}
