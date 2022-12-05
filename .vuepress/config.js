@@ -9,7 +9,7 @@ const thinker = '/thinker'
 
 module.exports = {
   base: '/',
-  title: '壹十八画生的个人博客',
+  title: '个人IT技术分享',
   description: '善读者，玩索而有得焉',
   search: true,
   searchMaxSuggestions: 5,
